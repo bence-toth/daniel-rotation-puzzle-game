@@ -1,0 +1,102 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  user-select: none;
+  font-size: 0;
+}
+
+body.customCursor,
+body.customCursor * {
+  cursor: none;
+}
+
+html, body {
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Pointer */
+
+#pointer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 2;
+}
+
+#pointer > img {
+  transition: opacity 0.4s;
+  transition-delay: 0.1s;
+}
+
+#pointer > img.hidden {
+  opacity: 0;
+}
+
+/* Board */
+
+#board {
+  border: 1.5vmin solid hsl(0, 0%, 25%);
+  background-color: hsl(0, 0%, 90%);
+  box-shadow: 0 0 2vmin hsla(0, 0%, 0%, 0.5) inset;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+@keyframes fadingIn {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+    pointer-events: none;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
+
+.card {
+  width: 20vmin;
+  height: 20vmin;
+  margin: 0.5px;
+  border: 0;
+  background-color: transparent;
+  position: relative;
+  perspective: 75vmin;
+  opacity: 1;
+  transition: transform 5s;
+  animation-duration: 0.8s;
+  animation-name: fadingIn;
+  animation-timing-function: ease-out;
+}
+
+.imageFragment {
+  width: 100%;
+  height: 100%;
+  background-color: red;
+  background-size: 500% 500%;
+}
+
+.card[data-rotation="1"] .imageFragment {
+  transform: rotate(90deg);
+}
+
+.card[data-rotation="2"] .imageFragment {
+  transform: rotate(180deg);
+}
+
+.card[data-rotation="3"] .imageFragment {
+  transform: rotate(270deg);
+}

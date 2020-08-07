@@ -85,8 +85,13 @@ html, body {
 .imageFragment {
   width: 100%;
   height: 100%;
-  background-color: red;
+  background-color: gray;
   background-size: 500% 500%;
+  transition: transform 0.5s;
+}
+
+.card[data-rotation="0"] .imageFragment {
+  transform: rotate(0deg);
 }
 
 .card[data-rotation="1"] .imageFragment {
@@ -99,4 +104,8 @@ html, body {
 
 .card[data-rotation="3"] .imageFragment {
   transform: rotate(270deg);
+}
+
+.card[data-rotation="4"] .imageFragment {
+  transform: rotate(360deg);
 }

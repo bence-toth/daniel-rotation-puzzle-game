@@ -80,6 +80,11 @@ html, body {
   animation-duration: 0.8s;
   animation-name: fadingIn;
   animation-timing-function: ease-out;
+  outline: 0;
+}
+
+.card:disabled {
+  z-index: 1;
 }
 
 .imageFragment {

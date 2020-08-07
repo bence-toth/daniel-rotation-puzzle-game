@@ -32,19 +32,24 @@ const handleCardClick = event => {
   }
 }
 
-const setupBoard = puzzle => {
+const setupBoard = (puzzle, size = 4) => {
   const board = document.getElementById('board')
   const getRandomRotation = () => Math.floor(Math.random() * 4)
   const renderCard = (x, y) => `
     <button
       class="card"
       data-rotation="${getRandomRotation()}"
+      style="
+        width: ${(80 / size)}vmin;
+        height: ${(80 / size)}vmin;
+      "
     >
       <div
         class="imageFragment"
         style="
           background-image: url('./assets/puzzles/${puzzle}.jpg');
-          background-position: ${y * 25}% ${x * 25}%;
+          background-position: ${y * (100 / size)}% ${x * (100 / size)}%;
+          background-size: ${(size + 1) * 100}% ${(size + 1) * 100}%;
         "
       ></div>
     </button>
@@ -52,9 +57,10 @@ const setupBoard = puzzle => {
   const renderRow = children => `
     <div class="row">${children}</div>
   `
-  const boardHTML = [0, 1, 2, 3].map(rowIndex => (
+  const indices = Array.from(Array(size).keys())
+  const boardHTML = indices.map(rowIndex => (
     renderRow(
-      [0, 1, 2, 3].map(columnIndex => (
+      indices.map(columnIndex => (
         renderCard(rowIndex, columnIndex)
       )).join('')
     )
@@ -67,4 +73,4 @@ const setupBoard = puzzle => {
   })
 }
 
-setupBoard('locomotive')
+setupBoard('locomotive', 4)

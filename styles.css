@@ -68,8 +68,6 @@ html, body {
 }
 
 .card {
-  width: 20vmin;
-  height: 20vmin;
   margin: 0.5px;
   border: 0;
   background-color: transparent;
@@ -91,7 +89,6 @@ html, body {
   width: 100%;
   height: 100%;
   background-color: gray;
-  background-size: 500% 500%;
   transition: transform 0.25s;
 }
 

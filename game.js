@@ -73,4 +73,19 @@ const setupBoard = (puzzle, size = 4) => {
   })
 }
 
-setupBoard('locomotive', 4)
+const puzzles = [
+  'balloons',
+  'blue-balloons',
+  'cake-slice',
+  'cake',
+  'candles',
+  'cupcakes',
+  'flag',
+  'party-hats',
+  'presents',
+  'toy'
+]
+
+let currentPuzzleIndex = Math.floor(Math.random() * puzzles.length)
+
+setupBoard(puzzles[currentPuzzleIndex], 3)

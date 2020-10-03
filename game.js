@@ -1,3 +1,11 @@
+// TODO:
+// - Go to next puzzle when complete
+// - Play rotation sound
+// - Play yay sound when puzzle is completed
+// - Add music
+// - Update README.md
+// - Publish to GitHub pages
+
 const handleCardClick = event => {
   event.preventDefault()
 
@@ -33,7 +41,6 @@ const handleCardClick = event => {
 }
 
 const setupBoard = (puzzle, size = 4) => {
-  const board = document.getElementById('board')
   const getRandomRotation = () => Math.floor(Math.random() * 4)
   const renderCard = (x, y) => `
     <button

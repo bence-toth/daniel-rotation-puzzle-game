@@ -1,8 +1,12 @@
 // TODO:
+// - Update README.md
 // - Play rotation sound
+// https://freesound.org/people/f4ngy/sounds/240776/
+// https://freesound.org/people/dersuperanton/sounds/434472/
+// https://freesound.org/people/orioorb/sounds/535956/
+// https://freesound.org/people/Zeinel/sounds/483364/
 // - Play yay sound when puzzle is completed
 // - Add music
-// - Update README.md
 // - Publish to GitHub pages
 
 const handleCardClick = event => {

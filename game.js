@@ -47,9 +47,9 @@ const setupBoard = (puzzle, size = 4) => {
       <div
         class="imageFragment"
         style="
-          background-image: url('./assets/puzzles/${puzzle}.jpg');
-          background-position: ${y * (100 / size)}% ${x * (100 / size)}%;
-          background-size: ${(size + 1) * 100}% ${(size + 1) * 100}%;
+          background-image: url('./assets/puzzles/${puzzle}.webp');
+          background-position: ${y * (100 / (size - 1))}% ${x * (100 / (size - 1))}%;
+          background-size: ${(size) * 100}% ${(size) * 100}%;
         "
       ></div>
     </button>

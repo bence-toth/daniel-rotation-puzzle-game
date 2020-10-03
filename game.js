@@ -1,5 +1,4 @@
 // TODO:
-// - Go to next puzzle when complete
 // - Play rotation sound
 // - Play yay sound when puzzle is completed
 // - Add music
@@ -21,8 +20,8 @@ const handleCardClick = event => {
 
     cardClicked.dataset.rotation = newRotation
 
-    const imageFragment = cardClicked.querySelector('.imageFragment')
     if (newRotation === "4") {
+      const imageFragment = cardClicked.querySelector('.imageFragment')
       cardClicked.addEventListener('transitionend', () => {
         imageFragment.style.transitionDuration = "0s"
         requestAnimationFrame(() => {
@@ -33,10 +32,22 @@ const handleCardClick = event => {
         })
       }, {once: true})
     }
-
     cardClicked.addEventListener('transitionend', () => {
       cardClicked.disabled = false
     }, {once: true})
+
+    const allCards = [...document.querySelectorAll('.card')]
+    const isPuzzleComplete = allCards.every(card => ["0", "4"].includes(card.dataset.rotation))
+    if (isPuzzleComplete) {
+      allCards.forEach(card => card.disabled = true)
+      setTimeout(() => {
+        currentPuzzleIndex += 1
+        if (currentPuzzleIndex === puzzles.length) {
+          currentPuzzleIndex = 0
+        }
+        setupBoard(puzzles[currentPuzzleIndex], 3)
+      }, 3000)
+    }
   }
 }
 
@@ -82,13 +93,13 @@ const setupBoard = (puzzle, size = 4) => {
 
 const puzzles = [
   'balloons',
-  'blue-balloons',
   'cake-slice',
-  'cake',
   'candles',
-  'cupcakes',
+  'blue-balloons',
+  'cake',
   'flag',
   'party-hats',
+  'cupcakes',
   'presents',
   'toy'
 ]

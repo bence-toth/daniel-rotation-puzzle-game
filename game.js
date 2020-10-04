@@ -5,9 +5,29 @@
 // https://freesound.org/people/dersuperanton/sounds/434472/
 // https://freesound.org/people/orioorb/sounds/535956/
 // https://freesound.org/people/Zeinel/sounds/483364/
-// - Play yay sound when puzzle is completed
 // - Add music
 // - Publish to GitHub pages
+
+const getRandomElementFromArray = array => {
+  const randomIndex = Math.floor(Math.random() * array.length)
+  return array[randomIndex]
+}
+
+const voiceFiles = {
+  flip: [
+
+  ],
+  applause: [
+    'wow1', 'wow2', 'wow3', 'wow4', 'wow5',
+    'woo-hoo1', 'woo-hoo2', 'woo-hoo3', 'woo-hoo4',
+  ]
+}
+
+const playSound = (type = 'applause') => {
+  const voiceFile = getRandomElementFromArray(voiceFiles[type])
+  const audio = new Audio(`./assets/sound/${voiceFile}.mp3`)
+  audio.play()
+}
 
 const handleCardClick = event => {
   event.preventDefault()
@@ -36,14 +56,12 @@ const handleCardClick = event => {
         })
       }, {once: true})
     }
-    cardClicked.addEventListener('transitionend', () => {
-      cardClicked.disabled = false
-    }, {once: true})
 
     const allCards = [...document.querySelectorAll('.card')]
     const isPuzzleComplete = allCards.every(card => ["0", "4"].includes(card.dataset.rotation))
     if (isPuzzleComplete) {
       allCards.forEach(card => card.disabled = true)
+      setTimeout(playSound, 1000)
       setTimeout(() => {
         currentPuzzleIndex += 1
         if (currentPuzzleIndex === puzzles.length) {
@@ -51,6 +69,11 @@ const handleCardClick = event => {
         }
         setupBoard(puzzles[currentPuzzleIndex], 3)
       }, 3000)
+    }
+    else {
+      cardClicked.addEventListener('transitionend', () => {
+        cardClicked.disabled = false
+      }, {once: true})
     }
   }
 }

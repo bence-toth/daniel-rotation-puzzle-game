@@ -1,10 +1,3 @@
-// TODO:
-// - Update README.md
-// - Play rotation sound
-// https://freesound.org/people/f4ngy/sounds/240776/
-// - Add music
-// - Publish to GitHub pages
-
 const getRandomElementFromArray = array => {
   const randomIndex = Math.floor(Math.random() * array.length)
   return array[randomIndex]

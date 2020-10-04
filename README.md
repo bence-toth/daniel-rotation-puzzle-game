@@ -43,4 +43,4 @@ The [party hats picture](https://unsplash.com/photos/SJ3x7yxU4ak) is the courtes
 
 The [toy picture](https://unsplash.com/photos/Yz5BHrQpCh8) is the courtesy of [Mikael Seegen](https://unsplash.com/@mikael_seegen).
 
-The rotation sound is from [freesound.org](https://freesound.org/people/f4ngy/sounds/240776/) and is the courtesy of [f4ngy](https://freesound.org/people/f4ngy/).
+The [rotation sound](https://freesound.org/people/f4ngy/sounds/240776/) is from [freesound.org](https://freesound.org/) and is the courtesy of [f4ngy](https://freesound.org/people/f4ngy/).

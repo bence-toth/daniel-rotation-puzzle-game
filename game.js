@@ -2,9 +2,6 @@
 // - Update README.md
 // - Play rotation sound
 // https://freesound.org/people/f4ngy/sounds/240776/
-// https://freesound.org/people/dersuperanton/sounds/434472/
-// https://freesound.org/people/orioorb/sounds/535956/
-// https://freesound.org/people/Zeinel/sounds/483364/
 // - Add music
 // - Publish to GitHub pages
 
@@ -15,7 +12,7 @@ const getRandomElementFromArray = array => {
 
 const voiceFiles = {
   flip: [
-
+    'flip'
   ],
   applause: [
     'wow1', 'wow2', 'wow3', 'wow4', 'wow5',
@@ -38,6 +35,7 @@ const handleCardClick = event => {
 
   if (!cardClicked.disabled) {
     cardClicked.disabled = true
+    playSound('flip')
 
     const currentRotation = cardClicked.dataset.rotation
     const newRotation = `${Number(currentRotation) + 1}`

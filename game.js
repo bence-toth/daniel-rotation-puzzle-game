@@ -19,6 +19,14 @@ const playSound = (type = 'applause') => {
   audio.play()
 }
 
+const playMusic = () => {
+  const musicFile = './assets/music/music.mp3'
+  const audio = new Audio(musicFile)
+  audio.volume = 0.35
+  audio.loop = true
+  audio.play()
+}
+
 const handleCardClick = event => {
   event.preventDefault()
 
@@ -125,3 +133,5 @@ const puzzles = [
 let currentPuzzleIndex = Math.floor(Math.random() * puzzles.length)
 
 setupBoard(puzzles[currentPuzzleIndex], 3)
+
+document.addEventListener('click', playMusic, {once: true})

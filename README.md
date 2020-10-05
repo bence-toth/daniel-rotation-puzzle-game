@@ -15,7 +15,7 @@ Without him, this could not have happened, I am very proud of him, and I am eter
 
 This is the second part of a game series made for toddlers and small children. If you are interested, check out [the first game](https://github.com/bence-toth/daniel-memory-game).
 
-The music recording is the courtesy of Daniel’s godfather and my best friend [Mátyás Egervári](https://www.youtube.com/channel/UC5UBQWgQM3w34bu4uWJaTbA).
+The music recording is the courtesy of Daniel’s godfather and my best friend [Mátyás Egervári](https://www.gobeband.com/).
 
 
 ## License
